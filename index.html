@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b14">
+<meta name="description" content="MyLinks Hub — all your profiles in one beautiful link.">
+<title>MyLinks Hub | One link. Every you.</title>
+<style>
+:root{--bg:#090b14;--panel:#121626;--text:#f5f7ff;--muted:#9ba4bc;--line:#ffffff18;--a:#9b8cff;--b:#5ee7f5}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 10% 0%,#7153ff30,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+.wrap{width:min(1050px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;background:#090b14eF;border-bottom:1px solid var(--line);z-index:3}
+nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;font-size:20px;letter-spacing:-.5px}
+.brand span,.gradient{background:linear-gradient(100deg,#b7aaff,#67e9f4);background-clip:text;color:transparent}
+button,.btn{border:1px solid var(--line);background:#ffffff09;color:var(--text);padding:11px 15px;border-radius:12px;cursor:pointer;font-weight:700}
+.primary{background:linear-gradient(110deg,var(--a),var(--b));color:#10121c;border:0}
+.hero{text-align:center;padding:70px 0 45px}
+.tag{color:var(--b);font-size:12px;font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.03;letter-spacing:-2.5px;margin:18px 0}
+.hero p,.muted{color:var(--muted);line-height:1.7}
+.hero p{max-width:600px;margin:0 auto}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
+.preview,.panel,.feature{border:1px solid var(--line);background:linear-gradient(145deg,#171c2d,#101320);border-radius:22px}
+.preview{max-width:470px;margin:32px auto 0;padding:20px}
+.avatar{width:75px;height:75px;border-radius:24px;margin:0 auto 12px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#111326;font-size:25px;font-weight:900}
+.profile{text-align:center}
+.profile h3{margin:0;font-size:22px}
+.handle{color:var(--b);font-size:13px;margin-top:5px}
+.bio{color:var(--muted);font-size:14px;line-height:1.6}
+.links{display:grid;gap:10px;margin-top:18px}
+.social{display:flex;align-items:center;gap:12px;text-align:left;padding:13px;border:1px solid var(--line);border-radius:13px;background:#ffffff07;color:var(--text);font-weight:750;overflow-wrap:anywhere}
+.social .arrow{margin-left:auto;color:var(--muted)}
+section{padding:42px 0}
+.heading{text-align:center;margin-bottom:24px}
+.heading h2{font-size:clamp(28px,5vw,40px);margin:0 0 8px;letter-spacing:-1px}
+.heading p{color:var(--muted);line-height:1.6}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{padding:21px}
+.feature .ico{font-size:25px;color:var(--b)}
+.feature h3{margin:12px 0 7px}
+.feature p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+.builder{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.panel{padding:20px}
+.panel h3{margin-top:0}
+.field{display:grid;gap:7px;margin-bottom:14px}
+label{font-size:12px;color:#c5cbe0;font-weight:800}
+input,textarea{width:100%;background:#090c16;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:12px;outline:none}
+input:focus,textarea:focus{border-color:var(--a)}
+textarea{resize:vertical;min-height:75px}
+.hint{font-size:12px;color:var(--muted);line-height:1.6}
+.colors{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:34px;height:34px;border-radius:50%;padding:0;border:2px solid #ffffff30}
+.swatch.active{outline:2px solid white;outline-offset:2px}
+.live{position:sticky;top:85px}
+.livecard{padding:23px 17px;border:1px solid var(--line);border-radius:18px;background:#ffffff04;text-align:center}
+.livecard .links{margin-top:18px}
+.qr{margin-top:15px;text-align:center;display:none}
+.qr img{width:190px;max-width:100%;background:white;padding:8px;border-radius:12px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
+body.light{--bg:#f4f6fc;--text:#171a2b;--muted:#606a82;--line:#171a2b20}
+body.light header{background:#f4f6fced}
+body.light .panel,body.light .feature,body.light .preview{background:#ffffff}
+body.light input,body.light textarea{background:#fff;color:#171a2b}
+body.light .social{color:#171a2b;background:#f5f6fc}
+@media(max-width:720px){.features{grid-template-columns:1fr 1fr}.builder{grid-template-columns:1fr}.live{position:static}.hero{padding-top:48px}}
+@media(max-width:430px){.features{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a class="brand" href="#">↗ MyLinks <span>Hub</span></a>
+<button id="theme">☼ Switch theme</button>
+</nav></header>
+
+<main>
+<div class="wrap hero">
+<div class="tag">✦ YOUR DIGITAL WORLD, CONNECTED</div>
+<h1>One link.<br><span class="gradient">Every you.</span></h1>
+<p>Bring your socials, projects and favorite places together in one beautiful profile. Make it yours, then share it with everyone.</p>
+<div class="actions">
+<a class="btn primary" href="#studio">✦ Build your profile</a>
+<a class="btn" href="#features">Explore features ↓</a>
+</div>
+
+<div class="preview">
+<div class="profile">
+<div class="avatar">MH</div>
+<h3>Your Name</h3>
+<div class="handle">@yourname</div>
+<p class="bio">Your corner of the internet. Find me everywhere below ✨</p>
+<div class="links">
+<div class="social">◎ &nbsp; Instagram <span class="arrow">↗</span></div>
+<div class="social">▶ &nbsp; YouTube <span class="arrow">↗</span></div>
+<div class="social">♪ &nbsp; TikTok <span class="arrow">↗</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<section id="features">
+<div class="wrap">
+<div class="heading"><h2>More than just a link</h2><p>A flexible home for your online identity.</p></div>
+<div class="features">
+<div class="feature"><div class="ico">♙</div><h3>Your profile</h3><p>Display name, username, photo initials and a personal bio.</p></div>
+<div class="feature"><div class="ico">⌁</div><h3>All your socials</h3><p>Connect Instagram, TikTok, YouTube, WhatsApp, GitHub and more.</p></div>
+<div class="feature"><div class="ico">✦</div><h3>Custom themes</h3><p>Choose accent colors and switch between dark and light mode.</p></div>
+<div class="feature"><div class="ico">▦</div><h3>QR code</h3><p>Generate a QR code for your profile link to share easily.</p></div>
+<div class="feature"><div class="ico">↗</div><h3>Quick sharing</h3><p>Copy an example profile address to share or test.</p></div>
+<div class="feature"><div class="ico">◷</div><h3>Future analytics</h3><p>We can add profile visits and link-click statistics in a later phase.</p></div>
+</div>
+</div>
+</section>
+
+<section id="studio">
+<div class="wrap">
+<div class="heading"><h2>Profile Studio</h2><p>Edit the details and see your preview update instantly.</p></div>
+<div class="builder">
+<div class="panel">
+<h3>✦ Customize your profile</h3>
+<div class="field"><label for="name">DISPLAY NAME</label><input id="name" maxlength="50" value="Furqan" placeholder="Your name"></div>
+<div class="field"><label for="username">USERNAME</label><input id="username" maxlength="24" value="furqan" placeholder="yourname"></div>
+<div class="field"><label for="avatar">AVATAR INITIALS</label><input id="avatar" maxlength="3" value="F" placeholder="FH"></div>
+<div class="field"><label for="bioInput">BIO</label><textarea id="bioInput" maxlength="180">Digital creator • Building cool things online ⚡</textarea></div>
+<div class="field"><label>ACCENT COLOR</label><div class="colors">
+<button class="swatch active" data-color="#9b8cff" style="background:linear-gradient(135deg,#9b8cff,#5ee7f5)" aria-label="Purple cyan"></button>
+<button class="swatch" data-color="#ff7eb6" style="background:linear-gradient(135deg,#ff7eb6,#ffa96b)" aria-label="Pink orange"></button>
+<button class="swatch" data-color="#64e6b6" style="background:linear-gradient(135deg,#64e6b6,#5ee7f5)" aria-label="Mint cyan"></button>
+<button class="swatch" data-color="#ffd166" style="background:linear-gradient(135deg,#ffd166,#ff8c69)" aria-label="Gold orange"></button>
+</div></div>
+
+<h3 style="margin-top:24px">Social links</h3>
+<div class="field"><label for="instagram">INSTAGRAM URL</label><input id="instagram" placeholder="https://instagram.com/yourname"></div>
+<div class="field"><label for="tiktok">TIKTOK URL</label><input id="tiktok" placeholder="https://tiktok.com/@yourname"></div>
+<div class="field"><label for="youtube">YOUTUBE URL</label><input id="youtube" placeholder="https://youtube.com/@yourname"></div>
+<div class="field"><label for="whatsapp">WHATSAPP NUMBER (country code)</label><input id="whatsapp" inputmode="tel" placeholder="923001234567"></div>
+<div class="field"><label for="github">GITHUB URL</label><input id="github" placeholder="https://github.com/yourname"></div>
+<div class="field"><label for="website">PERSONAL WEBSITE</label><input id="website" placeholder="https://example.com"></div>
+<p class="hint">Prototype: your changes are saved only in this browser. Cloud accounts and permanent public profiles are the next phase.</p>
+<button class="primary" id="save" style="width:100%">Save on this device</button>
+</div>
+
+<div class="live">
+<div class="panel">
+<h3>Live preview <span style="float:right;color:var(--b);font-size:12px">● LIVE</span></h3>
+<div class="livecard">
+<div class="avatar" id="outAvatar">F</div>
+<h3 id="outName">Furqan</h3>
+<div class="handle" id="outHandle">@furqan</div>
+<p class="bio" id="outBio">Digital creator • Building cool things online ⚡</p>
+<div class="links" id="outLinks"><p class="hint">Add a social URL to see it here.</p></div>
+</div>
+<div class="actions">
+<button id="copy">⧉ Copy example link</button>
+<button class="primary" id="qrButton">▦ QR code</button>
+</div>
+<div class="qr" id="qrPanel">
+<h3>Profile QR</h3>
+<img id="qrImage" alt="Profile QR code">
+<p class="hint" id="qrText"></p>
+<button id="download">Download QR image</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">↗ MyLinks Hub · One link. Every you.</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const ids=['name','username','avatar','bioInput','instagram','tiktok','youtube','whatsapp','github','website'];
+let accent='#9b8cff';
+
+function validUrl(value){
+ let raw=(value||'').trim();
+ if(!raw)return '';
+ if(!/^https?:\/\//i.test(raw))raw='https://'+raw;
+ try{
+  const url=new URL(raw);
+  return ['http:','https:'].includes(url.protocol)?url.href:'';
+ }catch{return ''}
+}
+
+function exampleUrl(){
+ const user=$('username').value.trim().toLowerCase().replace(/[^a-z0-9_-]/g,'')||'yourname';
+ return location.origin+'/?profile='+encodeURIComponent(user);
+}
+
+function render(){
+ const name=$('name').value.trim()||'Your Name';
+ const user=$('username').value.trim().toLowerCase().replace(/[^a-z0-9_-]/g,'')||'yourname';
+ $('outName').textContent=name;
+ $('outHandle').textContent='@'+user;
+ $('outAvatar').textContent=($('avatar').value.trim()||name.slice(0,2)).slice(0,3).toUpperCase();
+ $('outBio').textContent=$('bioInput').value.trim();
+ document.documentElement.style.setProperty('--a',accent);
+
+ const items=[
+  ['instagram','Instagram','◎'],
+  ['tiktok','TikTok','♪'],
+  ['youtube','YouTube','▶'],
+  ['whatsapp','WhatsApp','◉'],
+  ['github','GitHub','⌘'],
+  ['website','Website','↗']
+ ];
+ const container=$('outLinks');
+ container.replaceChildren();
+ let count=0;
+
+ items.forEach(([id,label,icon])=>{
+  let raw=$(id).value.trim();
+  if(id==='whatsapp'&&raw){
+   const number=raw.replace(/\D/g,'');
+   raw=number.length>=8?'https://wa.me/'+number:'';
+  }
+  const url=validUrl(raw);
+  if(!url)return;
+  count++;
+  const link=document.createElement('a');
+  link.className='social';
+  link.href=url;
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  const labelNode=document.createElement('span');
+  labelNode.textContent=icon+'  '+label;
+  const arrow=document.createElement('span');
+  arrow.className='arrow';
+  arrow.textContent='↗';
+  link.append(labelNode,arrow);
+  container.append(link);
+ });
+ if(!count){
+  const empty=document.createElement('p');
+  empty.className='hint';
+  empty.textContent='Add a social URL to see it here.';
+  container.append(empty);
+ }
+}
+
+ids.forEach(id=>$(id).addEventListener('input',render));
+
+document.querySelectorAll('.swatch').forEach(button=>{
+ button.addEventListener('click',()=>{
+  document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  accent=button.dataset.color;
+  render();
+ });
+});
+
+$('theme').addEventListener('click',()=>{
+ document.body.classList.toggle('light');
+ $('theme').textContent=document.body.classList.contains('light')?'☾ Dark mode':'☼ Switch theme';
+});
+
+$('save').addEventListener('click',()=>{
+ try{
+  const data={};
+  ids.forEach(id=>data[id]=$(id).value);
+  data.accent=accent;
+  localStorage.setItem('mylinkshub-demo',JSON.stringify(data));
+  alert('Saved on this device!');
+ }catch(e){alert('Browser storage is unavailable.')}
+});
+
+try{
+ const saved=JSON.parse(localStorage.getItem('mylinkshub-demo')||'null');
+ if(saved){
+  ids.forEach(id=>{if(typeof saved[id]==='string')$(id).value=saved[id]});
+  if(saved.accent){
+   accent=saved.accent;
+   const swatch=[...document.querySelectorAll('.swatch')].find(b=>b.dataset.color===accent);
+   if(swatch){
+    document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));
+    swatch.classList.add('active');
+   }
+  }
+ }
+}catch(e){}
+
+$('copy').addEventListener('click',async()=>{
+ const url=exampleUrl();
+ try{
+  await navigator.clipboard.writeText(url);
+  alert('Example URL copied. Public user profiles will work after backend setup.');
+ }catch(e){prompt('Copy this example URL:',url)}
+});
+
+$('qrButton').addEventListener('click',()=>{
+ $('qrPanel').style.display='block';
+ const url=exampleUrl();
+ $('qrText').textContent='Example address only — real user profile pages will be connected in the next phase.';
+ $('qrImage').src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(url);
+ $('qrPanel').scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+$('download').addEventListener('click',()=>{
+ const image=$('qrImage');
+ if(!image.complete||!image.naturalWidth){
+  alert('Generate the QR code first and check your internet connection.');
+  return;
+ }
+ const a=document.createElement('a');
+ a.href=image.src;
+ a.download='mylinkshub-qr.png';
+ a.target='_blank';
+ a.click();
+});
+
+render();
+</script>
+</body>
+</html>
