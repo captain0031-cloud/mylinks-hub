@@ -3,319 +3,561 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090b14">
-<meta name="description" content="MyLinks Hub — all your profiles in one beautiful link.">
-<title>MyLinks Hub | One link. Every you.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b14">
+<meta name="description" content="MyLinks Hub — one beautiful link for every side of you.">
+<title>MyLinks Hub — Your Digital Identity</title>
+
 <style>
-:root{--bg:#090b14;--panel:#121626;--text:#f5f7ff;--muted:#9ba4bc;--line:#ffffff18;--a:#9b8cff;--b:#5ee7f5}
-*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 10% 0%,#7153ff30,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-.wrap{width:min(1050px,calc(100% - 28px));margin:auto}
-header{position:sticky;top:0;background:#090b14eF;border-bottom:1px solid var(--line);z-index:3}
-nav{height:68px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:900;font-size:20px;letter-spacing:-.5px}
-.brand span,.gradient{background:linear-gradient(100deg,#b7aaff,#67e9f4);background-clip:text;color:transparent}
-button,.btn{border:1px solid var(--line);background:#ffffff09;color:var(--text);padding:11px 15px;border-radius:12px;cursor:pointer;font-weight:700}
-.primary{background:linear-gradient(110deg,var(--a),var(--b));color:#10121c;border:0}
-.hero{text-align:center;padding:70px 0 45px}
-.tag{color:var(--b);font-size:12px;font-weight:800;letter-spacing:2px}
-h1{font-size:clamp(42px,8vw,76px);line-height:1.03;letter-spacing:-2.5px;margin:18px 0}
-.hero p,.muted{color:var(--muted);line-height:1.7}
-.hero p{max-width:600px;margin:0 auto}
-.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
-.preview,.panel,.feature{border:1px solid var(--line);background:linear-gradient(145deg,#171c2d,#101320);border-radius:22px}
-.preview{max-width:470px;margin:32px auto 0;padding:20px}
-.avatar{width:75px;height:75px;border-radius:24px;margin:0 auto 12px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#111326;font-size:25px;font-weight:900}
-.profile{text-align:center}
-.profile h3{margin:0;font-size:22px}
-.handle{color:var(--b);font-size:13px;margin-top:5px}
-.bio{color:var(--muted);font-size:14px;line-height:1.6}
-.links{display:grid;gap:10px;margin-top:18px}
-.social{display:flex;align-items:center;gap:12px;text-align:left;padding:13px;border:1px solid var(--line);border-radius:13px;background:#ffffff07;color:var(--text);font-weight:750;overflow-wrap:anywhere}
-.social .arrow{margin-left:auto;color:var(--muted)}
-section{padding:42px 0}
-.heading{text-align:center;margin-bottom:24px}
-.heading h2{font-size:clamp(28px,5vw,40px);margin:0 0 8px;letter-spacing:-1px}
-.heading p{color:var(--muted);line-height:1.6}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.feature{padding:21px}
-.feature .ico{font-size:25px;color:var(--b)}
-.feature h3{margin:12px 0 7px}
-.feature p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
-.builder{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.panel{padding:20px}
-.panel h3{margin-top:0}
-.field{display:grid;gap:7px;margin-bottom:14px}
-label{font-size:12px;color:#c5cbe0;font-weight:800}
-input,textarea{width:100%;background:#090c16;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:12px;outline:none}
-input:focus,textarea:focus{border-color:var(--a)}
-textarea{resize:vertical;min-height:75px}
-.hint{font-size:12px;color:var(--muted);line-height:1.6}
-.colors{display:flex;gap:10px;flex-wrap:wrap}
-.swatch{width:34px;height:34px;border-radius:50%;padding:0;border:2px solid #ffffff30}
-.swatch.active{outline:2px solid white;outline-offset:2px}
-.live{position:sticky;top:85px}
-.livecard{padding:23px 17px;border:1px solid var(--line);border-radius:18px;background:#ffffff04;text-align:center}
-.livecard .links{margin-top:18px}
-.qr{margin-top:15px;text-align:center;display:none}
-.qr img{width:190px;max-width:100%;background:white;padding:8px;border-radius:12px}
-footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
-body.light{--bg:#f4f6fc;--text:#171a2b;--muted:#606a82;--line:#171a2b20}
-body.light header{background:#f4f6fced}
-body.light .panel,body.light .feature,body.light .preview{background:#ffffff}
-body.light input,body.light textarea{background:#fff;color:#171a2b}
-body.light .social{color:#171a2b;background:#f5f6fc}
-@media(max-width:720px){.features{grid-template-columns:1fr 1fr}.builder{grid-template-columns:1fr}.live{position:static}.hero{padding-top:48px}}
-@media(max-width:430px){.features{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.panel{padding:16px}}
+:root {
+  --bg:#080b14;
+  --panel:#111624;
+  --panel2:#171e30;
+  --text:#f4f6ff;
+  --muted:#a0aac0;
+  --line:#29334a;
+  --accent:#a78bfa;
+  --cyan:#67e8f9;
+  --green:#86efac;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:
+    radial-gradient(ellipse at 15% 0%,#252052 0,transparent 35%),
+    radial-gradient(ellipse at 90% 30%,#103347 0,transparent 32%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+}
+button,input,textarea { font:inherit; }
+button,a { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+a { color:inherit; text-decoration:none; }
+button:focus-visible,a:focus-visible,input:focus-visible,
+textarea:focus-visible {
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
+.wrap { width:min(1080px,92%); margin:auto; }
+header {
+  position:sticky; top:0; z-index:10;
+  background:#080b14eF;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav {
+  min-height:70px; display:flex; align-items:center;
+  justify-content:space-between; gap:12px;
+}
+.brand { display:flex; align-items:center; gap:10px; font-weight:850; }
+.logo {
+  width:39px;height:39px;display:grid;place-items:center;
+  border-radius:13px;
+  color:#080b14;font-weight:950;font-size:20px;
+  background:linear-gradient(135deg,var(--cyan),var(--accent));
+}
+.nav-tag { color:var(--muted);font-size:12px; }
+main { padding:35px 0 65px; }
+.hero { text-align:center; padding:28px 0 35px; }
+.eyebrow {
+  color:var(--cyan);font-size:12px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;
+}
+h1 {
+  font-size:clamp(34px,7vw,65px);
+  line-height:1.07;letter-spacing:-2px;
+  margin:15px 0;
+}
+.gradient {
+  background:linear-gradient(100deg,var(--cyan),#c4b5fd,#f0abfc);
+  color:transparent;background-clip:text;
+  -webkit-background-clip:text;
+}
+.hero p { color:var(--muted);max-width:550px;margin:0 auto;line-height:1.8; }
+.layout {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:20px;align-items:start;
+}
+.card {
+  background:linear-gradient(145deg,#151b2b,#0e1320);
+  border:1px solid var(--line);border-radius:22px;
+  padding:23px;min-width:0;
+  box-shadow:0 18px 55px #0002;
+}
+.card h2 { margin:0 0 6px;font-size:20px; }
+.sub { color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 22px; }
+label { display:block;font-size:13px;font-weight:700;margin-bottom:8px; }
+.field { margin-bottom:17px; }
+input,textarea {
+  display:block;width:100%;color:var(--text);
+  background:#090e1a;border:1px solid var(--line);
+  border-radius:12px;padding:13px 14px;
+}
+textarea { resize:vertical;min-height:85px; }
+input::placeholder,textarea::placeholder { color:#6f7a92; }
+input:focus,textarea:focus { border-color:var(--accent); }
+.hint { color:var(--muted);font-size:11px;margin-top:6px; }
+.social-grid { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+.btn {
+  border:1px solid var(--line);border-radius:12px;
+  padding:12px 15px;background:var(--panel2);
+  color:var(--text);font-weight:750;
+  display:inline-flex;align-items:center;
+  justify-content:center;gap:8px;
+  transition:transform .15s,border-color .15s;
+}
+.btn:active { transform:scale(.97); }
+.btn:hover { border-color:var(--accent); }
+.primary {
+  color:#090b14;border:0;
+  background:linear-gradient(100deg,var(--cyan),#c4b5fd);
+}
+.full { width:100%; }
+.actions { display:grid;grid-template-columns:1fr 1fr;gap:10px; }
+.divider { height:1px;background:var(--line);margin:22px 0; }
+.preview { position:sticky;top:90px; }
+.preview-head {
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;margin-bottom:20px;
+}
+.status {
+  font-size:11px;color:var(--green);
+  background:#163526;border-radius:20px;padding:6px 10px;
+}
+.profile {
+  background:linear-gradient(160deg,#1a2240,#101522 65%);
+  border:1px solid #303c58;border-radius:20px;
+  padding:27px 20px;text-align:center;
+}
+.avatar {
+  width:86px;height:86px;border-radius:28px;
+  margin:0 auto 15px;display:grid;place-items:center;
+  font-size:30px;font-weight:900;color:#080b14;
+  background:linear-gradient(135deg,var(--cyan),#c4b5fd,#f0abfc);
+  border:3px solid #ffffff20;
+  overflow:hidden;
+}
+.profile h3 { font-size:25px;margin:0 0 4px; }
+.handle { color:var(--cyan);font-size:13px; }
+.bio { color:#c3cade;font-size:14px;line-height:1.7;margin:16px 0 20px;overflow-wrap:anywhere; }
+.socials { display:grid;gap:10px; }
+.social-link {
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 14px;border-radius:12px;
+  border:1px solid #343e55;background:#171e30;
+  font-size:13px;font-weight:700;
+}
+.social-link span:last-child { color:var(--cyan); }
+.social-link.disabled { color:#667189;cursor:default; }
+.preview-footer { color:var(--muted);font-size:11px;margin-top:18px; }
+.result { display:none;margin-top:15px; }
+.result.show { display:block; }
+.result input { margin:10px 0; }
+.notice {
+  position:fixed;left:50%;bottom:22px;z-index:50;
+  transform:translate(-50%,20px);
+  opacity:0;pointer-events:none;
+  padding:12px 18px;border-radius:12px;
+  background:#e5e7eb;color:#101322;
+  font-weight:750;font-size:13px;
+  transition:.2s;max-width:90%;text-align:center;
+}
+.notice.show { opacity:1;transform:translate(-50%,0); }
+footer {
+  border-top:1px solid var(--line);
+  padding:25px 0;text-align:center;color:var(--muted);
+  font-size:12px;line-height:1.8;
+}
+footer strong { color:var(--text); }
+@media(max-width:760px) {
+  main { padding-top:18px; }
+  .layout { grid-template-columns:1fr; }
+  .preview { position:static; }
+  .card { padding:19px; }
+  .hero { padding:23px 0 27px; }
+  .nav-tag { display:none; }
+}
+@media(max-width:360px) {
+  .social-grid,.actions { grid-template-columns:1fr; }
+  h1 { letter-spacing:-1px; }
+}
 </style>
 </head>
+
 <body>
-<header><nav class="wrap">
-<a class="brand" href="#">↗ MyLinks <span>Hub</span></a>
-<button id="theme">☼ Switch theme</button>
-</nav></header>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./" aria-label="MyLinks Hub home">
+      <span class="logo">M</span>
+      <span>MyLinks <span class="gradient">Hub</span></span>
+    </a>
+    <span class="nav-tag">YOUR DIGITAL IDENTITY ✦</span>
+    <button class="btn" id="resetBtn" type="button">↺ Reset</button>
+  </div>
+</header>
 
-<main>
-<div class="wrap hero">
-<div class="tag">✦ YOUR DIGITAL WORLD, CONNECTED</div>
-<h1>One link.<br><span class="gradient">Every you.</span></h1>
-<p>Bring your socials, projects and favorite places together in one beautiful profile. Make it yours, then share it with everyone.</p>
-<div class="actions">
-<a class="btn primary" href="#studio">✦ Build your profile</a>
-<a class="btn" href="#features">Explore features ↓</a>
-</div>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">One link. Every you.</div>
+    <h1>Your world.<br><span class="gradient">One beautiful link.</span></h1>
+    <p>Bring your social profiles, creative work and favourite links together in one shareable place.</p>
+  </section>
 
-<div class="preview">
-<div class="profile">
-<div class="avatar">MH</div>
-<h3>Your Name</h3>
-<div class="handle">@yourname</div>
-<p class="bio">Your corner of the internet. Find me everywhere below ✨</p>
-<div class="links">
-<div class="social">◎ &nbsp; Instagram <span class="arrow">↗</span></div>
-<div class="social">▶ &nbsp; YouTube <span class="arrow">↗</span></div>
-<div class="social">♪ &nbsp; TikTok <span class="arrow">↗</span></div>
-</div>
-</div>
-</div>
-</div>
+  <div class="layout">
+    <section class="card" id="editor">
+      <h2>Build your profile ✨</h2>
+      <p class="sub">Add your details and watch your profile update instantly.</p>
 
-<section id="features">
-<div class="wrap">
-<div class="heading"><h2>More than just a link</h2><p>A flexible home for your online identity.</p></div>
-<div class="features">
-<div class="feature"><div class="ico">♙</div><h3>Your profile</h3><p>Display name, username, photo initials and a personal bio.</p></div>
-<div class="feature"><div class="ico">⌁</div><h3>All your socials</h3><p>Connect Instagram, TikTok, YouTube, WhatsApp, GitHub and more.</p></div>
-<div class="feature"><div class="ico">✦</div><h3>Custom themes</h3><p>Choose accent colors and switch between dark and light mode.</p></div>
-<div class="feature"><div class="ico">▦</div><h3>QR code</h3><p>Generate a QR code for your profile link to share easily.</p></div>
-<div class="feature"><div class="ico">↗</div><h3>Quick sharing</h3><p>Copy an example profile address to share or test.</p></div>
-<div class="feature"><div class="ico">◷</div><h3>Future analytics</h3><p>We can add profile visits and link-click statistics in a later phase.</p></div>
-</div>
-</div>
-</section>
+      <form id="profileForm">
+        <div class="field">
+          <label for="name">Your display name</label>
+          <input id="name" maxlength="60" placeholder="e.g. Furqan Khan" autocomplete="name">
+        </div>
 
-<section id="studio">
-<div class="wrap">
-<div class="heading"><h2>Profile Studio</h2><p>Edit the details and see your preview update instantly.</p></div>
-<div class="builder">
-<div class="panel">
-<h3>✦ Customize your profile</h3>
-<div class="field"><label for="name">DISPLAY NAME</label><input id="name" maxlength="50" value="Furqan" placeholder="Your name"></div>
-<div class="field"><label for="username">USERNAME</label><input id="username" maxlength="24" value="furqan" placeholder="yourname"></div>
-<div class="field"><label for="avatar">AVATAR INITIALS</label><input id="avatar" maxlength="3" value="F" placeholder="FH"></div>
-<div class="field"><label for="bioInput">BIO</label><textarea id="bioInput" maxlength="180">Digital creator • Building cool things online ⚡</textarea></div>
-<div class="field"><label>ACCENT COLOR</label><div class="colors">
-<button class="swatch active" data-color="#9b8cff" style="background:linear-gradient(135deg,#9b8cff,#5ee7f5)" aria-label="Purple cyan"></button>
-<button class="swatch" data-color="#ff7eb6" style="background:linear-gradient(135deg,#ff7eb6,#ffa96b)" aria-label="Pink orange"></button>
-<button class="swatch" data-color="#64e6b6" style="background:linear-gradient(135deg,#64e6b6,#5ee7f5)" aria-label="Mint cyan"></button>
-<button class="swatch" data-color="#ffd166" style="background:linear-gradient(135deg,#ffd166,#ff8c69)" aria-label="Gold orange"></button>
-</div></div>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" maxlength="30" placeholder="e.g. furqan" autocomplete="username" required>
+          <div class="hint">Letters, numbers, hyphens and underscores only.</div>
+        </div>
 
-<h3 style="margin-top:24px">Social links</h3>
-<div class="field"><label for="instagram">INSTAGRAM URL</label><input id="instagram" placeholder="https://instagram.com/yourname"></div>
-<div class="field"><label for="tiktok">TIKTOK URL</label><input id="tiktok" placeholder="https://tiktok.com/@yourname"></div>
-<div class="field"><label for="youtube">YOUTUBE URL</label><input id="youtube" placeholder="https://youtube.com/@yourname"></div>
-<div class="field"><label for="whatsapp">WHATSAPP NUMBER (country code)</label><input id="whatsapp" inputmode="tel" placeholder="923001234567"></div>
-<div class="field"><label for="github">GITHUB URL</label><input id="github" placeholder="https://github.com/yourname"></div>
-<div class="field"><label for="website">PERSONAL WEBSITE</label><input id="website" placeholder="https://example.com"></div>
-<p class="hint">Prototype: your changes are saved only in this browser. Cloud accounts and permanent public profiles are the next phase.</p>
-<button class="primary" id="save" style="width:100%">Save on this device</button>
-</div>
+        <div class="field">
+          <label for="bio">About you</label>
+          <textarea id="bio" maxlength="240" placeholder="Creator • Developer • Dreamer"></textarea>
+        </div>
 
-<div class="live">
-<div class="panel">
-<h3>Live preview <span style="float:right;color:var(--b);font-size:12px">● LIVE</span></h3>
-<div class="livecard">
-<div class="avatar" id="outAvatar">F</div>
-<h3 id="outName">Furqan</h3>
-<div class="handle" id="outHandle">@furqan</div>
-<p class="bio" id="outBio">Digital creator • Building cool things online ⚡</p>
-<div class="links" id="outLinks"><p class="hint">Add a social URL to see it here.</p></div>
-</div>
-<div class="actions">
-<button id="copy">⧉ Copy example link</button>
-<button class="primary" id="qrButton">▦ QR code</button>
-</div>
-<div class="qr" id="qrPanel">
-<h3>Profile QR</h3>
-<img id="qrImage" alt="Profile QR code">
-<p class="hint" id="qrText"></p>
-<button id="download">Download QR image</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <div class="field">
+          <label for="website">Your website URL</label>
+          <input id="website" type="url" placeholder="https://yourwebsite.com" inputmode="url">
+        </div>
+
+        <div class="divider"></div>
+        <h2 style="font-size:16px;margin-bottom:6px">Your social links</h2>
+        <p class="sub">Enter the full public URL for each platform. Leave unused fields blank.</p>
+
+        <div class="social-grid">
+          <div class="field">
+            <label for="instagram">📸 Instagram</label>
+            <input id="instagram" type="url" placeholder="https://instagram.com/you" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="tiktok">🎵 TikTok</label>
+            <input id="tiktok" type="url" placeholder="https://tiktok.com/@you" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="youtube">▶️ YouTube</label>
+            <input id="youtube" type="url" placeholder="https://youtube.com/@you" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="github">💻 GitHub</label>
+            <input id="github" type="url" placeholder="https://github.com/you" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="linkedin">💼 LinkedIn</label>
+            <input id="linkedin" type="url" placeholder="https://linkedin.com/in/you" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="x">𝕏 X / Twitter</label>
+            <input id="x" type="url" placeholder="https://x.com/you" inputmode="url">
+          </div>
+        </div>
+
+        <button class="btn primary full" type="submit">⚡ Generate My Profile Link</button>
+      </form>
+
+      <div class="result" id="result" aria-live="polite">
+        <div class="divider"></div>
+        <label for="generatedUrl">Your shareable profile link</label>
+        <input id="generatedUrl" readonly>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyBtn">▣ Copy Link</button>
+          <button class="btn" type="button" id="shareBtn">↗ Share Profile</button>
+        </div>
+        <p class="hint">This link includes your profile details. Anyone with the link can view them.</p>
+      </div>
+    </section>
+
+    <section class="card preview" id="previewSection">
+      <div class="preview-head">
+        <div>
+          <h2>Live preview</h2>
+          <p class="sub" style="margin:5px 0 0">Your profile, updated as you type.</p>
+        </div>
+        <span class="status">● LIVE</span>
+      </div>
+
+      <div class="profile">
+        <div class="avatar" id="avatar">Y</div>
+        <h3 id="previewName">Your Name</h3>
+        <div class="handle" id="previewHandle">@yourname</div>
+        <p class="bio" id="previewBio">Your story starts here. Add a short bio to introduce yourself.</p>
+        <div class="socials" id="socialList"></div>
+        <div class="preview-footer">Made with ♥ on MyLinks Hub</div>
+      </div>
+
+      <div class="divider"></div>
+      <button class="btn full" id="scrollEditorBtn" type="button">✎ Edit my details</button>
+    </section>
+  </div>
 </main>
 
-<footer><div class="wrap">↗ MyLinks Hub · One link. Every you.</div></footer>
+<footer>
+  <div class="wrap">
+    <strong>MyLinks Hub</strong> — Your digital identity, in one place.<br>
+    Build your presence. Share your world.
+  </div>
+</footer>
+
+<div class="notice" id="notice" role="status" aria-live="polite"></div>
 
 <script>
-const $=id=>document.getElementById(id);
-const ids=['name','username','avatar','bioInput','instagram','tiktok','youtube','whatsapp','github','website'];
-let accent='#9b8cff';
+(function () {
+  "use strict";
 
-function validUrl(value){
- let raw=(value||'').trim();
- if(!raw)return '';
- if(!/^https?:\/\//i.test(raw))raw='https://'+raw;
- try{
-  const url=new URL(raw);
-  return ['http:','https:'].includes(url.protocol)?url.href:'';
- }catch{return ''}
-}
+  const $ = (id) => document.getElementById(id);
 
-function exampleUrl(){
- const user=$('username').value.trim().toLowerCase().replace(/[^a-z0-9_-]/g,'')||'yourname';
- return location.origin+'/?profile='+encodeURIComponent(user);
-}
+  const fields = [
+    "name", "username", "bio", "website",
+    "instagram", "tiktok", "youtube",
+    "github", "linkedin", "x"
+  ];
 
-function render(){
- const name=$('name').value.trim()||'Your Name';
- const user=$('username').value.trim().toLowerCase().replace(/[^a-z0-9_-]/g,'')||'yourname';
- $('outName').textContent=name;
- $('outHandle').textContent='@'+user;
- $('outAvatar').textContent=($('avatar').value.trim()||name.slice(0,2)).slice(0,3).toUpperCase();
- $('outBio').textContent=$('bioInput').value.trim();
- document.documentElement.style.setProperty('--a',accent);
+  const platforms = [
+    { id: "website", label: "My Website", icon: "🌐" },
+    { id: "instagram", label: "Instagram", icon: "📸" },
+    { id: "tiktok", label: "TikTok", icon: "🎵" },
+    { id: "youtube", label: "YouTube", icon: "▶️" },
+    { id: "github", label: "GitHub", icon: "💻" },
+    { id: "linkedin", label: "LinkedIn", icon: "💼" },
+    { id: "x", label: "X / Twitter", icon: "𝕏" }
+  ];
 
- const items=[
-  ['instagram','Instagram','◎'],
-  ['tiktok','TikTok','♪'],
-  ['youtube','YouTube','▶'],
-  ['whatsapp','WhatsApp','◉'],
-  ['github','GitHub','⌘'],
-  ['website','Website','↗']
- ];
- const container=$('outLinks');
- container.replaceChildren();
- let count=0;
+  let noticeTimer;
 
- items.forEach(([id,label,icon])=>{
-  let raw=$(id).value.trim();
-  if(id==='whatsapp'&&raw){
-   const number=raw.replace(/\D/g,'');
-   raw=number.length>=8?'https://wa.me/'+number:'';
+  function notify(message) {
+    const box = $("notice");
+    box.textContent = message;
+    box.classList.add("show");
+    clearTimeout(noticeTimer);
+    noticeTimer = setTimeout(() => box.classList.remove("show"), 2600);
   }
-  const url=validUrl(raw);
-  if(!url)return;
-  count++;
-  const link=document.createElement('a');
-  link.className='social';
-  link.href=url;
-  link.target='_blank';
-  link.rel='noopener noreferrer';
-  const labelNode=document.createElement('span');
-  labelNode.textContent=icon+'  '+label;
-  const arrow=document.createElement('span');
-  arrow.className='arrow';
-  arrow.textContent='↗';
-  link.append(labelNode,arrow);
-  container.append(link);
- });
- if(!count){
-  const empty=document.createElement('p');
-  empty.className='hint';
-  empty.textContent='Add a social URL to see it here.';
-  container.append(empty);
- }
-}
 
-ids.forEach(id=>$(id).addEventListener('input',render));
-
-document.querySelectorAll('.swatch').forEach(button=>{
- button.addEventListener('click',()=>{
-  document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');
-  accent=button.dataset.color;
-  render();
- });
-});
-
-$('theme').addEventListener('click',()=>{
- document.body.classList.toggle('light');
- $('theme').textContent=document.body.classList.contains('light')?'☾ Dark mode':'☼ Switch theme';
-});
-
-$('save').addEventListener('click',()=>{
- try{
-  const data={};
-  ids.forEach(id=>data[id]=$(id).value);
-  data.accent=accent;
-  localStorage.setItem('mylinkshub-demo',JSON.stringify(data));
-  alert('Saved on this device!');
- }catch(e){alert('Browser storage is unavailable.')}
-});
-
-try{
- const saved=JSON.parse(localStorage.getItem('mylinkshub-demo')||'null');
- if(saved){
-  ids.forEach(id=>{if(typeof saved[id]==='string')$(id).value=saved[id]});
-  if(saved.accent){
-   accent=saved.accent;
-   const swatch=[...document.querySelectorAll('.swatch')].find(b=>b.dataset.color===accent);
-   if(swatch){
-    document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));
-    swatch.classList.add('active');
-   }
+  function cleanUsername(value) {
+    return value.trim().replace(/^@+/, "").toLowerCase()
+      .replace(/[^a-z0-9_-]/g, "").slice(0, 30);
   }
- }
-}catch(e){}
 
-$('copy').addEventListener('click',async()=>{
- const url=exampleUrl();
- try{
-  await navigator.clipboard.writeText(url);
-  alert('Example URL copied. Public user profiles will work after backend setup.');
- }catch(e){prompt('Copy this example URL:',url)}
-});
+  function safeUrl(value) {
+    const text = value.trim();
+    if (!text) return "";
+    try {
+      const url = new URL(text);
+      if (url.protocol === "https:" || url.protocol === "http:") {
+        return url.href;
+      }
+    } catch (_) {}
+    return "";
+  }
 
-$('qrButton').addEventListener('click',()=>{
- $('qrPanel').style.display='block';
- const url=exampleUrl();
- $('qrText').textContent='Example address only — real user profile pages will be connected in the next phase.';
- $('qrImage').src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(url);
- $('qrPanel').scrollIntoView({behavior:'smooth',block:'center'});
-});
+  function readFields() {
+    const data = {};
+    fields.forEach(id => data[id] = $(id).value.trim());
+    data.username = cleanUsername(data.username);
+    return data;
+  }
 
-$('download').addEventListener('click',()=>{
- const image=$('qrImage');
- if(!image.complete||!image.naturalWidth){
-  alert('Generate the QR code first and check your internet connection.');
-  return;
- }
- const a=document.createElement('a');
- a.href=image.src;
- a.download='mylinkshub-qr.png';
- a.target='_blank';
- a.click();
-});
+  function populate(data) {
+    fields.forEach(id => {
+      if (typeof data[id] === "string") $(id).value = data[id];
+    });
+    renderPreview();
+  }
 
-render();
+  function renderPreview() {
+    const data = readFields();
+    const username = data.username || "yourname";
+
+    $("previewName").textContent = data.name || "Your Name";
+    $("previewHandle").textContent = "@" + username;
+    $("previewBio").textContent =
+      data.bio || "Your story starts here. Add a short bio to introduce yourself.";
+    $("avatar").textContent =
+      (data.name.trim().charAt(0) || username.charAt(0) || "Y").toUpperCase();
+
+    const list = $("socialList");
+    list.replaceChildren();
+
+    platforms.forEach(platform => {
+      const raw = data[platform.id];
+      const url = safeUrl(raw);
+      const item = document.createElement("a");
+
+      item.className = "social-link" + (url ? "" : " disabled");
+      item.href = url || "#";
+      item.innerHTML = "";
+
+      const label = document.createElement("span");
+      label.textContent = platform.icon + "  " + platform.label;
+      const arrow = document.createElement("span");
+      arrow.textContent = url ? "↗" : "Not added";
+
+      item.append(label, arrow);
+
+      if (url) {
+        item.target = "_blank";
+        item.rel = "noopener noreferrer";
+      } else {
+        item.setAttribute("aria-disabled", "true");
+        item.addEventListener("click", event => {
+          event.preventDefault();
+          notify("Add your " + platform.label + " URL first.");
+        });
+      }
+
+      list.appendChild(item);
+    });
+  }
+
+  function buildShareUrl() {
+    const data = readFields();
+    const params = new URLSearchParams();
+
+    params.set("profile", data.username);
+    params.set("name", data.name || data.username);
+    params.set("bio", data.bio);
+
+    platforms.forEach(platform => {
+      const url = safeUrl(data[platform.id]);
+      if (url) params.set(platform.id, url);
+    });
+
+    return window.location.origin + window.location.pathname +
+      "?" + params.toString();
+  }
+
+  function generateLink(event) {
+    if (event) event.preventDefault();
+
+    const username = cleanUsername($("username").value);
+
+    if (!username) {
+      notify("Please enter a username first.");
+      $("username").focus();
+      return;
+    }
+
+    $("username").value = username;
+    const link = buildShareUrl();
+    $("generatedUrl").value = link;
+    $("result").classList.add("show");
+    notify("Your profile link is ready!");
+  }
+
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        temp.setAttribute("readonly", "");
+        temp.style.position = "fixed";
+        temp.style.opacity = "0";
+        document.body.appendChild(temp);
+        temp.select();
+        const success = document.execCommand("copy");
+        temp.remove();
+        if (!success) throw new Error("Copy unavailable");
+      }
+      notify("Link copied successfully!");
+    } catch (_) {
+      $("generatedUrl").focus();
+      $("generatedUrl").select();
+      notify("Select the link and choose Copy.");
+    }
+  }
+
+  async function shareProfile() {
+    const link = $("generatedUrl").value || buildShareUrl();
+    const data = readFields();
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: (data.name || data.username) + " | MyLinks Hub",
+          text: data.bio || "Check out my profile!",
+          url: link
+        });
+      } catch (error) {
+        if (error.name !== "AbortError") notify("Sharing failed. Try Copy Link.");
+      }
+    } else {
+      await copyText(link);
+    }
+  }
+
+  function loadFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const hasProfile = params.has("profile") || params.has("name");
+
+    if (!hasProfile) {
+      $("name").value = "Furqan";
+      $("username").value = "furqan";
+      $("bio").value = "Digital creator • Learning, building and creating.";
+      return;
+    }
+
+    const data = {};
+    fields.forEach(id => {
+      if (params.has(id)) data[id] = params.get(id) || "";
+    });
+
+    if (!data.username && params.has("profile")) {
+      data.username = cleanUsername(params.get("profile") || "");
+    }
+
+    populate(data);
+    $("result").classList.add("show");
+    $("generatedUrl").value = window.location.href;
+  }
+
+  $("profileForm").addEventListener("submit", generateLink);
+
+  fields.forEach(id => {
+    $(id).addEventListener("input", renderPreview);
+  });
+
+  $("copyBtn").addEventListener("click", () => {
+    const link = $("generatedUrl").value;
+    if (link) copyText(link);
+    else notify("Generate your profile link first.");
+  });
+
+  $("shareBtn").addEventListener("click", shareProfile);
+
+  $("scrollEditorBtn").addEventListener("click", () => {
+    $("editor").scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => $("name").focus({ preventScroll: true }), 350);
+  });
+
+  $("resetBtn").addEventListener("click", () => {
+    if (!window.confirm("Reset your profile fields? Unsaved changes will be cleared.")) return;
+
+    $("profileForm").reset();
+    $("result").classList.remove("show");
+    $("generatedUrl").value = "";
+    $("name").value = "";
+    $("username").value = "";
+    $("bio").value = "";
+    renderPreview();
+    notify("Profile editor reset.");
+  });
+
+  loadFromUrl();
+  renderPreview();
+})();
 </script>
 </body>
 </html>
